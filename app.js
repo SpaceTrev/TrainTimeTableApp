@@ -49,9 +49,7 @@ function displayNewTrain(name) {
         frequency: frequency
     }
     trains.push(newTrainObject);
-    database.ref("trains/").push({
-        newTrainObject: newTrainObject
-    })
+   database.ref()
 }
 $(document).on('click', '#addTrainButton', displayNewTrain);
 // $(document).on(ready, function(){
