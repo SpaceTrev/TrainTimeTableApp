@@ -50,11 +50,51 @@ function displayNewTrain(name) {
     }
     trains.push(newTrainObject);
    database.ref()
+//    for (var i = 0; i < trains.length; i++) {
+    $("#trainScheduleDisplay").append(`
+    <table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Train Name</th>
+        <th scope="col">Destination</th>
+        <th scope="col">Time Until Arrival</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>${1}</td>
+        <td>${1}</td>
+        <td>${1}</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>${0}</td>
+        <td>${0}</td>
+        <td>${0}</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>${0}</td>
+        <td>${0}</td>
+        <td>${0}</td>
+      </tr>
+    </tbody>
+  </table>
+    `)
+//    }
+}
+
+function displaySavedTrains() {
+    
 }
 $(document).on('click', '#addTrainButton', displayNewTrain);
-// $(document).on(ready, function(){
-
-// })
+$(document).ready(function() {
+ database.ref("trains/schedule_Data_Object").on('child-added', function(snapshot){
+     displayNewTrain(snapshot.val().name);
+ })
+})
 
 
 
