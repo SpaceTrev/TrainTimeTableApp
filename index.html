@@ -20,45 +20,31 @@
         </strong>
         <br>
         <h4>Train Schedule Application</h4>
+        <br>
+        <h5>Current Time</h5>
+        <div class="container text-white text-center" id="trainTimeDisplay">
+
+        </div>
     </div>
     <!-- div that displays train schedule and pulls from firebase-->
-    <div id="trainTimeDisplay">
-
-    </div>
+    
     <br>
-    <div id="trainSchedule" class="container rounded bg-success text-white text-center">
+    <div class="container rounded bg-success text-white text-center">
         <br>
-        <table class="table table-striped table-dark">
+        <table id="trainSchedule" class="table table-striped table-dark">
             <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Train Name</th>
-                <th scope="col">Destination</th>
-                <th scope="col">Time Until Arrival</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
-          <br>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">Train</th>
+                  <th scope="col">Destination</th>
+                  <th scope="col">Next Train At</th>
+                  <th scope="col">Time Until Arrival</th>
+                </tr>
+              </thead>
+
+        </table>
+        <br>
+    </table>
     </div>
     <br>
 
@@ -67,64 +53,34 @@
         <br>
         <form>
             <div class="form-group">
-                <label for="formControlInput0">Train Name</label>
-                <input type="email" class="form-control form-control-sm" id="formControlInput0" placeholder="Meowth EXPR">
+                <label for="nameId">Train Name</label>
+                <input type="text" class="form-control form-control-sm" id="nameId" placeholder="Meowth EXPR">
             </div>
             <br>
             <div class="form-group">
-                <label for="formControlInput1git ">Destination</label>
-                <input type="text" class="form-control form-control-sm" id="formControlInput3" placeholder="Cartegena, Spain">
+                <label for="destinationId">Destination</label>
+                <input type="text" class="form-control form-control-sm" id="destinationId" placeholder="Cartegena, Spain">
             </div>
             <br>
             <div class="form-group">
-                <label for="formControlSelect0">First Train Departure</label>
-                <select class="form-control form-control-sm" id="formControlSelect0">
-                    <option>01:00</option>
-                    <option>02:00</option>
-                    <option>03:00</option>
-                    <option>04:00</option>
-                    <option>05:00</option>
-                    <option>06:00</option>
-                    <option>07:00</option>
-                    <option>08:00</option>
-                    <option>09:00</option>
-                    <option>10:00</option>
-                    <option>11:00</option>
-                    <option>12:00</option>
-                    <option>13:00</option>
-                    <option>14:00</option>
-                    <option>15:00</option>
-                    <option>16:00</option>
-                    <option>17:00</option>
-                    <option>18:00</option>
-                    <option>19:00</option>
-                    <option>20:00</option>
-                    <option>21:00</option>
-                    <option>22:00</option>
-                    <option>24:00</option>
-                </select>
+                <label for="departureTime">First Train Departure</label>
+                <input type="text" class="form-control form-control-sm" id="departureTime" placeholder="Military time 24:00">
             </div>
             <br>
             <div class="form-group">
-                <label for="formControlSelect1">Frequency (Hours:Minutes)</label>
-                <select class="form-control form-control-sm" id="formControlSelect1">
-                    <option>00:15</option>
-                    <option>00:30</option>
-                    <option>00:45</option>
-                    <option>01:00</option>
-                    <option>01:30</option>
-                    <option>02:00</option>
-                </select>
+                <label for="frequent">Frequency (Min)</label>
+               <input type="text" class="form-control form-control-sm" id="frequent" placeholder="Frequency in min">
             </div>
             <br>
-            <button id="addTrainButton" type="button" class="btn btn-primary text-white text-center">Add Train</button>
+            <button id="addTrainButton" type="submit" class="btn btn-primary text-white text-center">Add Train</button>
             <br>
             <br>
         </form>
     </div>
     <br>
     <br>
-    <script src="assets/javascript/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.0/moment.js"></script>
+    <script src="assets/javascript/trainScript.js"></script>
 </body>
 
 </html>

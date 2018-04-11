@@ -30,14 +30,15 @@ var config = {
 firebase.initializeApp(config);
 var database = firebase.database();
 function writeUserData(trains) {
-    console.log("write user data");
+    // console.log("write user data");
     database.ref("trains/").set({
         schedule_Data_Object: trains
     })
-    console.log(trains);
+    // console.log(trains);
 }
 writeUserData(trains);
 function displayNewTrain(name) {
+    event.preventDefault();
     var trainName = $("#formControlInput0").val().trim();
     var trainDestination = $("#formControlInput1").val();
     var firstDepartTime = $("#formControlSelect0").val();
@@ -47,8 +48,10 @@ function displayNewTrain(name) {
         destination: trainDestination,
         firstTrainTime: firstDepartTime,
         frequency: frequency
+       
     }
     trains.push(newTrainObject);
+    console.log(newTrainObject);
    database.ref()
 //    for (var i = 0; i < trains.length; i++) {
     $("#trainScheduleDisplay").append(`
@@ -96,6 +99,10 @@ $(document).ready(function() {
  })
 })
 
-
-
-
+{/* <tr>
+<th scope="row">${childSnapshot.val().name}</th>
+<td>${childSnapshot.val().destination}</td>
+<td>${childSnapshot.val().freq}</td>
+<td>${moment(nextTrain).format("hh:mm")}</td>
+<td>${tMinutesTillTrain}</td>
+</tr> */}
