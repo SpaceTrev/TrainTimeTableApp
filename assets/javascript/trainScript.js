@@ -4,12 +4,13 @@ let firstTrainTime = '';
 let frequency = '';
 
 const config = {
-    apiKey: "AIzaSyCkub7V9GVdtqrVHHfzJwALAXJxf242lWk",
-    authDomain: "traintimetablehw.firebaseapp.com",
-    databaseURL: "https://traintimetablehw.firebaseio.com",
-    projectId: "traintimetablehw",
-    storageBucket: "traintimetablehw.appspot.com",
-    messagingSenderId: "907573510404"
+    apiKey: "AIzaSyApbC4l-dAGbzXKDaw1FNEze9jbp2lPltg",
+    authDomain: "train-madrid.firebaseapp.com",
+    databaseURL: "https://train-madrid.firebaseio.com",
+    projectId: "train-madrid",
+    storageBucket: "",
+    messagingSenderId: "559754505789",
+    appId: "1:559754505789:web:62e68d4b8462c70c"
 };
 
 firebase.initializeApp(config);
